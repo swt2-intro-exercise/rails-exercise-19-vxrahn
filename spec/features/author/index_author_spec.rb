@@ -6,7 +6,7 @@ describe "Author index page", type: :feature do
     @alan = FactoryBot.create :author
   end
 
-  it "should render withour error" do
+  it "should render without error" do
     visit authors_path
   end
 

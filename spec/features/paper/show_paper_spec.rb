@@ -6,7 +6,7 @@ describe "Show paper page", type: :feature do
     @computing = FactoryBot.create :paper
   end
 
-  it "should render withour error" do
+  it "should render without error" do
     visit paper_path(@computing)
   end
 

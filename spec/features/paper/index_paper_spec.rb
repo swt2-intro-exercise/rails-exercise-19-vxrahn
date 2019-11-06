@@ -13,7 +13,7 @@ describe "Paper index page", type: :feature do
                       :authors => [])
   end
 
-  it "should render withour error" do
+  it "should render without error" do
     visit papers_path
   end
 
