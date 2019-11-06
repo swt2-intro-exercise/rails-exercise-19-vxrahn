@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+homepage = "https://en.wikipedia.org/wiki/Test"
+
 describe "Edit author page", type: :feature do
 
   before(:each) do
@@ -15,13 +17,13 @@ describe "Edit author page", type: :feature do
 
     page.fill_in 'author[first_name]', with: @alan.first_name
     page.fill_in 'author[last_name]', with: @alan.first_name
-    page.fill_in 'author[homepage]', with: HOMEPAGE
+    page.fill_in 'author[homepage]', with: homepage
 
     find('input[type="submit"]').click
 
     @alan.reload
 
-    expect(@alan.homepage).to eq(HOMEPAGE)
+    expect(@alan.homepage).to eq(homepage)
   end
 
 end

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-FIRST_NAME = "Edsger"
-LAST_NAME = "Dijkstra"
-HOMEPAGE = "https://en.wikipedia.org/wiki/Edsger_W._Dijkstra"
+first_name = "Edsger"
+last_name = "Dijkstra"
+homepage = "https://en.wikipedia.org/wiki/Edsger_W._Dijkstra"
 
 describe "New author page", type: :feature do
 
@@ -21,17 +21,17 @@ describe "New author page", type: :feature do
 
   it "should save author" do
     visit new_author_path
-    page.fill_in 'author[first_name]', with: FIRST_NAME
-    page.fill_in 'author[last_name]', with: LAST_NAME
-    page.fill_in 'author[homepage]', with: HOMEPAGE
+    page.fill_in 'author[first_name]', with: first_name
+    page.fill_in 'author[last_name]', with: last_name
+    page.fill_in 'author[homepage]', with: homepage
 
     find('input[type="submit"]').click
   end
 
   it "should show validation errors" do
     visit new_author_path
-    page.fill_in 'author[first_name]', with: FIRST_NAME
-    page.fill_in 'author[homepage]', with: HOMEPAGE
+    page.fill_in 'author[first_name]', with: first_name
+    page.fill_in 'author[homepage]', with: homepage
 
     find('input[type="submit"]').click
 
