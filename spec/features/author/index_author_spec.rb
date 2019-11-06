@@ -26,4 +26,11 @@ describe "Author index page", type: :feature do
     expect(page).to have_link 'Edit author', href: edit_author_path(@alan)
   end
 
+  it "should have a link to delete an author" do
+    visit authors_path
+    author_count = Author.count
+    find_link("Delete author").click
+    expect(Author.count).to be < author_count
+  end
+
 end
