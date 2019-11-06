@@ -23,4 +23,14 @@ describe "New author page", type: :feature do
 
     find('input[type="submit"]').click
   end
+
+  it "should show validation errors" do
+    visit new_author_path
+    page.fill_in 'author[first_name]', with: 'Edsger'
+    page.fill_in 'author[homepage]', with: 'https://en.wikipedia.org/wiki/Edsger_W._Dijkstra'
+
+    find('input[type="submit"]').click
+
+    expect(page).to have_text('Error while saving')
+  end
 end
