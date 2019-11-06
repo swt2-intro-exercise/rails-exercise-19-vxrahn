@@ -21,7 +21,7 @@ describe "Edit author page", type: :feature do
 
     @alan.reload
 
-    expect(@alan.homepage).to be 'http://wikipedia.de/Edit'
+    expect(@alan.homepage).to eq('http://wikipedia.de/Edit')
   end
 
 end
