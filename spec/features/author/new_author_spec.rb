@@ -31,6 +31,6 @@ describe "New author page", type: :feature do
 
     find('input[type="submit"]').click
 
-    expect(page).to have_text('Error while saving')
+    expect(page).to have_text('prohibited this author from being saved')
   end
 end
