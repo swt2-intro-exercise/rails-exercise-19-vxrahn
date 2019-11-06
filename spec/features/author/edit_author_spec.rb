@@ -15,13 +15,13 @@ describe "Edit author page", type: :feature do
 
     page.fill_in 'author[first_name]', with: @alan.first_name
     page.fill_in 'author[last_name]', with: @alan.first_name
-    page.fill_in 'author[homepage]', with: 'http://wikipedia.de/Edit'
+    page.fill_in 'author[homepage]', with: HOMEPAGE
 
     find('input[type="submit"]').click
 
     @alan.reload
 
-    expect(@alan.homepage).to eq('http://wikipedia.de/Edit')
+    expect(@alan.homepage).to eq(HOMEPAGE)
   end
 
 end
