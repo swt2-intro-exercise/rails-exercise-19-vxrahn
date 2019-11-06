@@ -13,6 +13,11 @@ describe Paper, type: :model do
     expect(paper.year).to eq(year)
   end
 
+  it "should have and belong to many authors" do
+    paper = Paper.new( :title => title, :venue => venue, :year => title)
+    expect(paper.authors.count).to eq(0)
+  end
+
   it "should not validate without title" do
     paper = Paper.new( :venue => venue, :year => year)
     expect(paper).to_not be_valid
