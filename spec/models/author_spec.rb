@@ -8,5 +8,12 @@ describe Author, type: :model do
     expect(author.first_name).to eq('Alan')
     expect(author.last_name).to eq('Turing')
     expect(author.homepage).to eq('http://wikipedia.org/Alan_Turing')
+
+  end
+
+  it "should return name containing first name and last name" do
+    author = Author.new( :first_name => 'Alan', :last_name => 'Turing', :homepage => 'http://wikipedia.org/Alan_Turing')
+
+    expect(author.name).to eq('Alan Turing')
   end
 end
